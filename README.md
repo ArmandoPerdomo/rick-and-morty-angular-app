@@ -1,6 +1,10 @@
 # RickAndMortyAngularApp
 
-This app was made for practice, for all people who see my profile and wants to see a demo of my skills you can easily clone and run
+In this app you can review all characters info and episodes of the series
+
+This app was made for practice and for a test to demostrate my skills. 
+
+For all people who see my profile and wants to see a demo of my skills you can easily clone and run
 
 ## Development server
 

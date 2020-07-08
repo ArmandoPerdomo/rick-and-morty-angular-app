@@ -1,6 +1,6 @@
 # RickAndMortyAngularApp
 
-This app was made for practice, for all people who see my repo and wants to see a demo of my skills you can easily clone and run
+This app was made for practice, for all people who see my profile and wants to see a demo of my skills you can easily clone and run
 
 ## Development server
 

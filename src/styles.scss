@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container-full-height{ height: 100% }
+.padded-x-10{ padding-right: 10px; padding-left: 10px; }
+.padded-y-10 {padding-top: 10px; padding-bottom: 10px;}
+.margin-y-10 {margin-top: 10px; margin-bottom: 10px;}
+.margin-x-10 {margin-right: 10px; margin-left: 10px;}
+.cursor-pointer{cursor: pointer !important;}

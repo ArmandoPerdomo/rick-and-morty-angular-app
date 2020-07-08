@@ -1,0 +1,25 @@
+<h3 mat-dialog-title>View Character Info</h3>
+<div mat-dialog-content>
+  <div fxLayout="column" fxFlex fxLayoutGap="1em" fxLayoutAlign="start center">
+
+    <div class="character-image">
+      <img [src]="character.image" [alt]="'Photo of a '+ character.name ">
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <p>Name: <b>{{character.name}}</b></p>
+    <p>Created At: <b>{{character.created | date}}</b></p>
+    <p>Gender: <b>{{character.gender}}</b></p>
+    <p>Location: <b>{{character.location.name}}</b></p>
+    <p>Origin: <b>{{character.origin.name}}</b></p>
+    <p>Type: <b>{{character.type || 'Unknown'}}</b></p>
+    <p>Status: <b>{{character.status}}</b></p>
+    <p>Specie: <b>{{character.species}}</b></p>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button fxFlexFill>
+    Close
+  </button>
+</div>

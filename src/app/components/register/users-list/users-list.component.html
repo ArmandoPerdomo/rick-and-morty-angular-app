@@ -1,0 +1,19 @@
+<div fxLayout="column" class="padded-x-10" fxFlex>
+  <h3>Users List:</h3>
+  <ng-container *ngFor="let user of (usersService.usersObs | async)">
+    <div class="user-item mat-elevation-z2" fxFlex="0 1 auto">
+      <p>UID: <b>{{user.uid}}</b></p>
+      <p>Name: <b>{{user.name}}</b></p>
+      <p>Email: <b>{{user.email}}</b></p>
+      <p>Password: <b>{{user.password}}</b></p>
+
+      <div class="margin-y-10" fxLayoutAlign="center center">
+        <button (click)="usersService.delete(user.uid)" mat-raised-button color="warn">
+          Delete
+        </button>
+      </div>
+    </div>
+  </ng-container>
+
+  <p *ngIf="!(usersService.usersObs | async).length">There are no users registered</p>
+</div>

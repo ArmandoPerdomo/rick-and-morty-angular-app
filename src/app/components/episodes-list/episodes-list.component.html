@@ -1,0 +1,31 @@
+<div class="container-full-height" fxLayout="column" fxLayoutGap="1em">
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 1 auto">
+    <mat-paginator [length]="info ? info.count: 0"
+                   [pageSize]="20"
+                   [disabled]="loading"
+                   (page)="onPageChange($event)"
+                   showFirstLastButtons
+                   [pageSizeOptions]="[20]">
+    </mat-paginator>
+  </div>
+
+  <div class="padded-x-10" fxLayout="row wrap" fxLayoutGap="3%" fxFlex>
+    <app-loading-spinner *ngIf="loading; else NoLoadingTmpl" fxFlex="100%" label="Loading Episodes"></app-loading-spinner>
+    <ng-template #NoLoadingTmpl>
+      <ng-container *ngFor="let episode of episodes">
+        <mat-card class="mat-elevation-z3 margin-y-10" fxFlex="0 1 calc(20%-3%)">
+          <mat-card-header>
+            <mat-card-title>{{episode.name}}</mat-card-title>
+            <mat-card-subtitle>Emitted: {{episode.air_date}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions>
+            <div fxLayout="row" fxFlex fxLayoutAlign="end center">
+              <button mat-button (click)="viewDetail(episode)">MORE INFO</button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </ng-template>
+
+  </div>
+</div>

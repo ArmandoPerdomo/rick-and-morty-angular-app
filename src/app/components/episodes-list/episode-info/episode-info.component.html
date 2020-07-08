@@ -1,0 +1,28 @@
+<h3 mat-dialog-title>View Episode Info</h3>
+<div mat-dialog-content>
+  <div fxLayout="column" fxFlex fxLayoutGap="1em" fxLayoutAlign="start center">
+    <p>Name: <b>{{episode.name}}</b></p>
+    <p>Emitted: <b>{{episode.air_date | date}}</b></p>
+    <p>Created At: <b>{{episode.created | date}}</b></p>
+    <p>Episode: <b>{{episode.episode}}</b></p>
+
+    <mat-divider></mat-divider>
+
+    <h4>Characters:</h4>
+    <app-loading-spinner *ngIf="loadingCharacters; else NoLoadingTmpl" fxFlex label="Loading Characters"></app-loading-spinner>
+    <ng-template #NoLoadingTmpl>
+      <div fxLayout="row wrap" fxLayoutGap="3%">
+        <ng-container *ngFor="let character of characters">
+          <div fxFlex="calc(50%-3%)">
+            <app-character-item [character]="character" [showImage]="false"></app-character-item>
+          </div>
+        </ng-container>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button fxFlexFill>
+    Close
+  </button>
+</div>

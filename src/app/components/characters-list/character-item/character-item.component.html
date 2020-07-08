@@ -1,0 +1,12 @@
+<mat-card class="mat-elevation-z3 margin-y-10">
+  <mat-card-header>
+    <mat-card-title>{{character.name}}</mat-card-title>
+    <mat-card-subtitle>{{character.gender}} - Created at: {{character.created | date:'short'}}</mat-card-subtitle>
+  </mat-card-header>
+  <img *ngIf="showImage" mat-card-image [src]="character.image" [alt]="'Photo of a '+ character.name ">
+  <mat-card-actions>
+    <div fxLayout="row" fxFlex fxLayoutAlign="end center">
+      <button mat-button (click)="viewDetail(character)">MORE INFO</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
